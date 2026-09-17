@@ -1,0 +1,596 @@
+/* =========================================================
+   1. CONFIGURAÇÕES GERAIS
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #222222;
+    color: #ffa600;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   2. CABEÇALHO
+   ========================================================= */
+
+header {
+    background-color: #e2e2e2;
+    color: rgb(0, 0, 0);
+    padding: 30px 8%;
+}
+
+
+/* =========================================================
+   3. MENU COM FLEXBOX
+   ========================================================= */
+
+nav :hover{
+    display: flex;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+header nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    background-color: #ffed4c;
+}
+
+
+/* =========================================================
+   4. CONTEÚDO PRINCIPAL
+   ========================================================= */
+
+main {
+    width: 84%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+section {
+    background-color: rgb(0, 0, 0);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.08);
+}
+
+.descricao {
+    color: #ce8d01;
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   5. LEGENDA DO GRID
+   ========================================================= */
+
+.legenda-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.legenda-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.amostra-container {
+    width: 35px;
+    height: 20px;
+    border: 3px dashed #ffc014;
+}
+
+.amostra-item {
+    width: 35px;
+    height: 20px;
+    border: 3px solid #ffed4c;
+}
+
+
+/* =========================================================
+   6. GRID PRINCIPAL DA ATIVIDADE
+   =========================================================
+
+   ESTE É O EXEMPLO MAIS IMPORTANTE DE CSS GRID.
+
+   A DIV .grid-demonstracao é o CONTAINER GRID.
+
+   Tudo que está diretamente dentro dela
+   passa a ser um ITEM do Grid.
+*/
+
+.grid-demonstracao {
+
+    /*
+        Ativa o CSS Grid.
+    */
+    display: grid;
+
+
+    /*
+        Cria TRÊS colunas de mesmo tamanho.
+
+        repeat(3, 1fr)
+
+        significa:
+
+        repita 3 vezes uma coluna de 1 fração.
+
+        É equivalente a:
+
+        1fr 1fr 1fr
+    */
+    grid-template-columns: repeat(4, 1fr);
+
+
+    /*
+        Cria espaço entre linhas e colunas.
+    */
+    gap: 40px;
+
+
+    /*
+        BORDA DIDÁTICA.
+
+        A borda tracejada permite enxergar
+        claramente onde começa e termina
+        o CONTAINER GRID.
+    */
+    border: 4px dashed #cccccc;
+
+
+    /*
+        Espaço entre a borda externa
+        e os itens internos.
+    */
+    padding: 20px;
+
+    border-radius: 8px;
+
+    background-color: #000000;
+}
+
+
+/* =========================================================
+   7. ITENS DO GRID
+   =========================================================
+
+   Cada .grid-item é uma célula visual
+   distribuída dentro do container.
+*/
+
+.grid-item {
+    border: 3px solid #ffe44c;
+
+    background-color: #fffcf3;
+
+    padding: 20px;
+
+    border-radius: 8px;
+
+    min-height: 150px;
+}
+
+.grid-item h3 {
+    color: #c7ac33;
+    margin-bottom: 8px;
+}
+
+.grid-item p {
+    margin-bottom: 0;
+}
+
+
+/*
+    Pequena etiqueta que deixa ainda mais claro
+    qual elemento estamos observando.
+*/
+
+.numero-grid {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    padding: 4px 8px;
+
+    background-color: #ffb223;
+
+    color: rgb(0, 0, 0);
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    border-radius: 4px;
+}
+
+
+/* =========================================================
+   8. ITEM OCUPANDO DUAS COLUNAS
+   =========================================================
+
+   span 2 significa:
+
+   "ocupe o espaço correspondente
+   a duas colunas".
+*/
+
+.ocupa-duas-colunas {
+    grid-column: span 2;
+}
+
+
+/* =========================================================
+   9. ITEM OCUPANDO TODA A LARGURA
+   =========================================================
+
+   1 / -1 significa:
+
+   comece na primeira linha do Grid
+   e termine na última.
+
+   Resultado: o item ocupa toda a largura.
+*/
+
+.largura-total {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   10. CAIXA DE INVESTIGAÇÃO
+   ========================================================= */
+
+.caixa-investigacao {
+    margin-top: 25px;
+
+    padding: 20px;
+
+    border-left: 5px solid #ffed4c;
+
+    background-color: #000000;
+}
+
+.caixa-investigacao code {
+    background-color: #000000;
+
+    padding: 2px 6px;
+
+    border-radius: 4px;
+}
+
+
+/* =========================================================
+   11. FORMULÁRIO COM CSS GRID
+   =========================================================
+
+   Agora aplicamos a MESMA IDEIA do exemplo anterior.
+
+   A diferença é que aqui o Grid possui
+   apenas DUAS colunas.
+*/
+
+#formInscricao {
+
+    /*
+        Ativa o Grid.
+    */
+    display: grid;
+
+
+    /*
+        Duas colunas de mesmo tamanho.
+    */
+    grid-template-columns: 1fr 1fr;
+
+
+    /*
+        Espaço entre campos.
+    */
+    gap: 20px;
+
+
+    /*
+        Esta borda tracejada também é DIDÁTICA.
+
+        Ela permite perceber que o formulário
+        inteiro é um container Grid.
+    */
+    border: 3px dashed #d4d4d4;
+
+    padding: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 8px;
+}
+
+
+/* =========================================================
+   12. CAMPOS INTERNOS COM FLEXBOX
+   =========================================================
+
+   Dentro de cada célula do Grid usamos Flexbox
+   para colocar LABEL e INPUT um abaixo do outro.
+*/
+
+.campo {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+
+    /*
+        Esta borda fina é proposital.
+
+        Ela ajuda a perceber cada campo como
+        um ITEM dentro do Grid do formulário.
+    */
+    border: 1px solid #585858;
+
+    padding: 12px;
+
+    border-radius: 6px;
+}
+
+
+/* =========================================================
+   13. CAMPO OCUPANDO DUAS COLUNAS
+   ========================================================= */
+
+.campo-completo {
+    grid-column: span 2;
+}
+
+
+/* =========================================================
+   14. ELEMENTOS DO FORMULÁRIO
+   ========================================================= */
+
+label {
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #575757;
+
+    border-radius: 6px;
+
+    font-size: 16px;
+
+    font-family: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+
+    border-color: #fffc4c;
+
+    box-shadow: 0 0 0 2px rgba(255, 228, 76, 0.15);
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+/* =========================================================
+   15. BOTÕES
+   ========================================================= */
+
+button {
+    background-color: #fffc4c;
+
+    color: rgb(0, 0, 0);
+
+    border: none;
+
+    padding: 14px 24px;
+
+    border-radius: 6px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ffdc41;
+}
+
+
+/* =========================================================
+   16. MENSAGEM E CONTADOR
+   ========================================================= */
+
+#mensagemSucesso {
+    color: rgb(0, 2, 128);
+
+    font-weight: bold;
+
+    margin-top: 20px;
+}
+
+.total {
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   17. PARTICIPANTES COM FLEXBOX
+   ========================================================= */
+
+#listaParticipantes {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #000000;
+
+    border-left: 5px solid #f3ff4c;
+
+    padding: 20px;
+
+    border-radius: 8px;
+
+    width: calc(50% - 10px);
+}
+
+.card h3 {
+    color: #c7b833;
+
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin: 5px 0;
+}
+
+.card strong {
+    color: #d3d3d3;
+}
+
+
+/* =========================================================
+   18. BOTÃO EXCLUIR
+   ========================================================= */
+
+.botao-excluir {
+    margin-top: 15px;
+
+    background-color: #c02b2b;
+
+    padding: 8px 14px;
+}
+
+.botao-excluir:hover {
+    background-color: #922121;
+}
+
+
+/* =========================================================
+   19. RODAPÉ
+   ========================================================= */
+
+footer {
+    background-color: #bbbbe6;
+
+    color: rgb(0, 0, 0);
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+
+/* =========================================================
+   20. RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    /*
+        O GRID DIDÁTICO passa de três colunas
+        para apenas uma.
+    */
+
+    .grid-demonstracao {
+        grid-template-columns: 1fr;
+    }
+
+
+    /*
+        Como existe apenas uma coluna,
+        nenhum item precisa ocupar duas.
+    */
+
+    .ocupa-duas-colunas,
+    .largura-total {
+        grid-column: span 2;
+    }
+
+
+    /*
+        O formulário também passa
+        de duas colunas para uma.
+    */
+
+    #formInscricao {
+        grid-template-columns: 1fr;
+    }
+
+
+    /*
+        Os elementos que ocupavam duas colunas
+        agora ocupam apenas uma.
+    */
+
+    .campo-completo {
+        grid-column: span 1;
+    }
+
+
+    /*
+        Os cards de participantes passam
+        a ocupar toda a largura.
+    */
+
+    .card {
+        width: 100%;
+    }
+
+
+    /*
+        O menu fica em coluna.
+    */
+
+    nav {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+}

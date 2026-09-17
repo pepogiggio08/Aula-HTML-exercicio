@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Experience - Laboratório de Grid e DOM</title>
+
+    <!-- CSS EXTERNO -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CSS INTERNO: usado apenas para revisão -->
+    <style>
+        #destaque {
+            color: #7a4cff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ======================================================
+         CABEÇALHO
+         ====================================================== -->
+
+    <header>
+        <h1>Web Experience</h1>
+
+        <p id="destaque">
+            Laboratório de HTML, CSS Grid, Flexbox e JavaScript.
+        </p>
+
+        <nav>
+            <a href="#sobre">Sobre</a>
+            <a href="#grid">Grid</a>
+            <a href="#inscricao">Inscrição</a>
+            <a href="#participantes">Participantes</a>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- ==================================================
+             1. SOBRE
+             ================================================== -->
+
+        <section id="sobre">
+            <h2>Sobre o projeto</h2>
+
+            <p>
+                Nesta atividade você irá revisar conteúdos já estudados
+                e conhecer novos recursos de HTML, CSS e JavaScript.
+            </p>
+
+            <!-- CSS INLINE: usado apenas para revisão -->
+            <p style="color: #555; font-weight: bold;">
+                Observe o código, teste, altere e compare os resultados.
+            </p>
+        </section>
+
+
+        <!-- ==================================================
+             2. LABORATÓRIO VISUAL DE CSS GRID
+             ==================================================
+
+             ESTA É A PARTE PRINCIPAL PARA ENTENDER GRID.
+
+             A borda tracejada mostra o CONTAINER GRID.
+             As caixas internas são os ITENS DO GRID.
+        -->
+
+        <section id="grid">
+
+            <h2>Laboratório visual de CSS Grid</h2>
+
+            <p class="descricao">
+                Antes de usar Grid no formulário, observe como ele organiza
+                elementos em linhas e colunas.
+            </p>
+
+            <!-- Pequena legenda visual -->
+            <div class="legenda-grid">
+
+                <div class="legenda-item">
+                    <span class="amostra-container"></span>
+                    <span>Borda tracejada = container Grid</span>
+                </div>
+
+                <div class="legenda-item">
+                    <span class="amostra-item"></span>
+                    <span>Borda sólida = item do Grid</span>
+                </div>
+
+            </div>
+
+
+            <!--
+                CONTAINER GRID
+
+                Todos os elementos .grid-item abaixo são
+                filhos diretos deste container.
+
+                O CSS decidirá quantas colunas existirão.
+            -->
+
+            <div class="grid-demonstracao">
+
+                <article class="grid-item">
+                    <span class="numero-grid">ITEM 1</span>
+                    <h3>HTML</h3>
+                    <p>Estrutura e semântica da página.</p>
+                </article>
+
+                <article class="grid-item">
+                    <span class="numero-grid">ITEM 2</span>
+                    <h3>CSS</h3>
+                    <p>Aparência visual dos elementos.</p>
+                </article>
+
+                <article class="grid-item">
+                    <span class="numero-grid">ITEM 3</span>
+                    <h3>Flexbox</h3>
+                    <p>Organização de elementos em linha ou coluna.</p>
+                </article>
+
+                <!--
+                    Este item possui uma classe extra:
+                    ocupa-duas-colunas
+
+                    Ela fará este card ocupar o espaço
+                    de DUAS colunas do Grid.
+                -->
+                <article class="grid-item ocupa-duas-colunas">
+                    <span class="numero-grid">ITEM 4 - OCUPA 2 COLUNAS</span>
+                    <h3>CSS Grid</h3>
+                    <p>
+                        Este cartão é maior porque utiliza
+                        <strong>grid-column: span 2;</strong>
+                    </p>
+                </article>
+
+                <article class="grid-item">
+                    <span class="numero-grid">ITEM 5</span>
+                    <h3>JavaScript</h3>
+                    <p>Comportamento e interatividade.</p>
+                </article>
+
+                <article class="grid-item largura-total">
+                    <span class="numero-grid">ITEM 6 - LARGURA TOTAL</span>
+                    <h3>DOM</h3>
+                    <p>
+                        Este cartão ocupa toda a largura do Grid usando
+                        <strong>grid-column: 1 / -1;</strong>
+                    </p>
+                </article>
+
+                <article class="grid-item largura-total">
+                    <span class="numero-grid">ITEM 7 - LARGURA TOTAL</span>
+                    <h3>PHP</h3>
+                    <p>
+                        Este cartão ocupa toda a largura do Grid usando
+                        <strong>grid-column: 1 / -1;</strong>
+                    </p>
+                </article>
+
+                
+            </div>
+
+
+            <div class="caixa-investigacao">
+
+                <h3>Experimentos rápidos</h3>
+
+                <ol>
+                    <li>
+                        Troque <code>repeat(3, 1fr)</code> por
+                        <code>repeat(2, 1fr)</code>.
+                        Observe como alguns blocos "escorregam" para novas linhas
+                        quando o número de colunas do container muda.
+                    </li>
+
+                    <li>
+                        Depois experimente
+                        <code>repeat(4, 1fr)</code>.
+                    </li>
+
+                    <li>
+                        Altere <code>gap: 20px</code> para
+                        <code>gap: 0</code> e depois para
+                        <code>gap: 40px</code>.
+                    </li>
+
+                    <li>
+                        Comente a regra
+                        <code>grid-column: span 2</code>.
+                    </li>
+
+                    <li>
+                        Use o DevTools e ative a visualização
+                        <strong>Grid</strong>.
+                    </li>
+
+                    <li>
+                        Redimensione lentamente a janela do navegador.
+                        Observe o momento em que o Grid deixa de ter três colunas
+                        e passa a ter apenas uma.
+                    </li>
+                </ol>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             3. FORMULÁRIO
+             ==================================================
+
+             Agora o mesmo conceito de Grid é aplicado
+             em uma situação prática.
+
+             O formulário terá DUAS COLUNAS.
+        -->
+
+        <section id="inscricao">
+
+            <h2>Faça sua inscrição</h2>
+
+            <p class="descricao">
+                Agora observe como a mesma lógica do Grid é usada
+                para organizar os campos do formulário.
+            </p>
+
+
+            <form id="formInscricao">
+
+                <div class="campo">
+                    <label for="nome">Nome:</label>
+
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                </div>
+
+
+                <div class="campo">
+                    <label for="email">E-mail:</label>
+
+                    <input type="email" id="email" name="email" placeholder="nome@email.com" required>
+                </div>
+
+
+                <div class="campo">
+                    <label for="curso">Curso:</label>
+
+                    <input type="text" id="curso" name="curso" placeholder="Digite seu curso" required>
+                </div>
+
+                <div class="campo">
+                    <label for="pais">País:</label>
+
+                    <input type="text" id="pais" name="pais" placeholder="Digite seu país" required>
+                </div>
+
+                <div class="campo">
+                    <label for="area">Area de interesse</label>
+
+                    <select id="area" name="area" required>
+
+                        <option value="">
+                            Escolha uma opção
+                        </option>
+
+                        <option value="HTML">HTML</option>
+                        <option value="CSS">CSS</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="UX/UI">UX/UI</option>
+
+                    </select>
+                </div>
+
+                
+
+                <!--
+                    Esta classe faz o campo ocupar
+                    AS DUAS COLUNAS do formulário.
+                -->
+
+                <div class="campo campo-completo">
+
+                    <label for="mensagem">
+                        O que você gostaria de aprender?
+                    </label>
+
+                    <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua resposta"></textarea>
+
+                </div>
+
+
+                <div class="campo-completo">
+                    <button type="submit">
+                        Realizar inscrição
+                    </button>
+                </div>
+
+            </form>
+
+
+            <p id="mensagemSucesso"></p>
+
+        </section>
+
+
+        <!-- ==================================================
+             4. PARTICIPANTES
+             ================================================== -->
+
+        <section id="participantes">
+
+            <h2>Participantes inscritos</h2>
+
+            <p class="total">
+                Total de inscrições:
+                <strong id="contador">0</strong>
+            </p>
+
+            <div id="listaParticipantes"></div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Web Experience | Projeto acadêmico</p>
+    </footer>
+
+
+    <!-- JAVASCRIPT EXTERNO -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+WEB EXPERIENCE - KIT FINAL DE LABORATÓRIO
+
+OBJETIVO
+Revisar HTML e CSS já estudados e oferecer um primeiro contato prático com formulários, CSS Grid, JavaScript e DOM. O projeto já está funcionando: o foco é investigar, modificar, testar hipóteses e explicar o comportamento do código.
+
+ARQUIVOS
+- index.html
+- style.css
+- script.js
+- Apostila_Aluno_Web_Experience.docx
+- Prompts_IA_Web_Experience.docx
+- LEIA-ME.txt
+
+COMO COMEÇAR
+1. Abra a pasta no VS Code.
+2. Abra index.html no navegador ou use Live Server.
+3. Antes de alterar qualquer código, navegue pela página e faça uma inscrição de teste.
+4. Comece pela seção “Laboratório visual de CSS Grid”.
+5. Siga as missões da apostila uma por vez.
+6. Use o documento de prompts quando precisar de explicação, investigação de erro ou autoavaliação.
+
+PONTOS IMPORTANTES
+- A borda tracejada representa visualmente o container Grid.
+- As bordas sólidas representam itens do Grid.
+- Teste 2, 3 e 4 colunas e observe como os cards mudam de linha.
+- Redimensione a janela para observar a media query transformar o Grid em uma coluna.
+- No formulário, id identifica o elemento para CSS/JavaScript e name identifica o dado no envio do formulário.
+- Ao comentar evento.preventDefault(), o navegador volta ao comportamento padrão do formulário: a página recarrega e os valores dos campos com name podem aparecer na URL.
+
+USO DE IA
+IA é permitida como apoio. Use o arquivo Prompts_IA_Web_Experience.docx para pedir explicações, testar hipóteses, localizar erros e verificar sua compreensão. Evite pedir que a IA refaça o projeto inteiro.
+
+ENTREGA / FECHAMENTO
+Ao final, o grupo deve conseguir explicar:
+- a diferença entre Grid e Flexbox no projeto;
+- o caminho do submit até appendChild();
+- por que .value é necessário para ler inputs;
+- por que os participantes desaparecem após F5.
